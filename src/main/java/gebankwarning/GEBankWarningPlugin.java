@@ -21,7 +21,7 @@ import static net.runelite.client.util.QuantityFormatter.formatNumber;
 
 @Slf4j
 @PluginDescriptor(
-        name = "GE Bank Warning"
+        name = "Banked GP Warning"
 )
 public class GEBankWarningPlugin extends Plugin {
     @Inject
