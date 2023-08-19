@@ -1,15 +1,11 @@
 package gebankwarning;
 
-import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.ScriptID;
 import net.runelite.api.Varbits;
-import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.widgets.WidgetInfo;
-import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -27,8 +23,6 @@ public class GEBankWarningPlugin extends Plugin {
     @Inject
     private Client client;
 
-    @Inject
-    private GEBankWarningConfig config;
 
     @Subscribe
     public void onScriptPostFired(ScriptPostFired event) {
@@ -87,10 +81,5 @@ public class GEBankWarningPlugin extends Plugin {
             button.setText("Confirm");
             button.setTextColor(0xEF2929);
         }
-    }
-
-    @Provides
-    GEBankWarningConfig provideConfig(ConfigManager configManager) {
-        return configManager.getConfig(GEBankWarningConfig.class);
     }
 }
